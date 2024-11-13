@@ -1,2 +1,2 @@
-# XXX PHP MVC Jokes Application
+# tjg PHP MVC Jokes Application
 

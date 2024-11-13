@@ -4,7 +4,7 @@
  *
  * Filename:        CategoryController.php
  * Location:        /App/Controllers
- * Project:         XXX-mvc-jokes
+ * Project:         tjg-mvc-jokes
  * Date Created:    6/09/2024
  *
  * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
