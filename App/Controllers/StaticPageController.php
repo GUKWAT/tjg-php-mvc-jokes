@@ -40,6 +40,18 @@ class StaticPageController
         // TODO: Crete the method code for the home page
         echo"<h1>CODE INSTALLED CORRECTLY</h1>";
         echo"<p>Time to work on the rest of the application</p>";
+
+        $joke = $db->query("SELECT * FROM jokes ORDER BY RAND() LIMIT 1");
+
+
+
+
+
+
+
+
+
+
     }
 
     /*
