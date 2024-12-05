@@ -7,7 +7,7 @@
  * Project:         SaaS-FED-Notes
  * Date Created:    DD/MM/YYYY
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Tadiwanashe Gukwa <20095319@tafe.wa.edu.au>
  *
  */
 
@@ -17,7 +17,7 @@ use Framework\Session;
 $authenticated = new Authorise();
 if ($authenticated->isAuthenticated()){
     $user = Session::get('user')??'n/a';
-    $given_name = $user['given_name']??'n/a';
+    $nickname = $user['nick_name']?? $user['given_name'];
 }
 ?>
 
@@ -66,9 +66,9 @@ if ($authenticated->isAuthenticated()){
         <?php
         if ($authenticated->isAuthenticated()):
             ?>
-            <p class="text-zinc-300 ">NickName &gt</p>
+            <p class="text-zinc-300 "><?= ($nickname) ?></p>
 
-            <form method="POST" action="/" class="">
+            <form method="POST" action="/auth/logout" class="">
                 <button class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
                      border-0 border-b-2 hover:border-b-sky-500
                      transition ease-in-out duration-500">
@@ -78,13 +78,13 @@ if ($authenticated->isAuthenticated()){
         <?php
         else:
             ?>
-            <p><a href="/"
+            <p><a href="/auth/login"
                   class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
                      border-0 border-b-2 hover:border-b-sky-500
                      transition ease-in-out duration-500">
                     Login
                 </a></p>
-            <p><a href="/"
+            <p><a href="/auth/register"
                   class="pb-2 px-1 text-text-zinc-700-200 hover:text-sky-300
                      border-0 border-b-2 hover:border-b-sky-500
                      transition ease-in-out duration-500">

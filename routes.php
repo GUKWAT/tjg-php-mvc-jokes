@@ -4,7 +4,7 @@
  *
  * Filename:        routes.php
  * Location:        /
- * Project:         XXX-mvc-jokes
+ * Project:         tjg-mvc-jokes
  * Date Created:    06/09/2024
  *
  * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
@@ -15,6 +15,9 @@
  * Static Page Endpoints
  */
 $router->get('/', 'StaticPageController@index');
+$router->get('/about', 'StaticPageController@about');
+
+
 
 /* ----------------------------------------------------------------------------
  * Jokes Endpoints
@@ -54,3 +57,5 @@ $router->post('/auth/login', 'UserAuthController@authenticate', ['guest']);
 
 $router->get('/auth/password', 'CreatePasswordController@index', ['guest']);
 $router->post('/auth/password', 'CreatePasswordController@index', ['guest']);
+
+

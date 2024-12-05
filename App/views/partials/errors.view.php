@@ -8,7 +8,7 @@
  *
  * Filename:        errors.view.php
  * Location:        ${FILE_LOCATION}
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         tjg-PHP-MVC-Jokes
  * Date Created:    23/08/2024
  *
  * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>

@@ -8,7 +8,7 @@
  *
  * Filename:        Session.php
  * Location:
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         tjg-PHP-MVC-Jokes
  * Date Created:    DD/MM/YYYY
  *
  * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>

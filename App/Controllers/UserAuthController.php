@@ -7,10 +7,10 @@
  *
  * Filename:        UserAuthController.php
  * Location:        App/Controllers
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         tjg-PHP-MVC-Jokes
  * Date Created:    DD/MM/YYYY
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          YOUR NAME <20095319@tafe.wa.edu.au>
  *
  */
 
@@ -74,12 +74,10 @@ class UserAuthController
     {
         $givenName = $_POST['given_name'] ?? null;
         $familyName = $_POST['family_name'] ?? null;
+        $nickName = $_POST['nick_name'] ?? $givenName;
         $email = $_POST['email'] ?? null;
-        $city = $_POST['city'] ?? null;
-        $state = $_POST['state'] ?? null;
         $password = $_POST['password'] ?? null;
         $passwordConfirmation = $_POST['password_confirmation'] ?? null;
-
         $errors = [];
 
         // Validation
@@ -94,6 +92,9 @@ class UserAuthController
         if (!Validation::string($familyName, 0, 50)) {
             $errors['family_name'] = 'Family Name is optional';
         }
+        if (!Validation::string($nickName, 2, 50)) {
+            $errors['nick_name'] = 'Nickname must be between 2 and 50 characters';
+        }
 
         if (!Validation::string($password, 6, 50)) {
             $errors['password'] = 'Password must be at least 6 characters';
@@ -103,6 +104,8 @@ class UserAuthController
             $errors['password_confirmation'] = 'Passwords do not match';
         }
 
+
+
         if (!empty($errors)) {
             loadView('usersAuth/create', [
                 'errors' => $errors,
@@ -110,6 +113,9 @@ class UserAuthController
                     'given_name' => $givenName,
                     'family_name' => $familyName,
                     'email' => $email,
+                    'nick_name' => $nickName,
+                    'password' => $password,
+
                 ]
             ]);
             exit;
@@ -122,6 +128,7 @@ class UserAuthController
 
         $user = $this->db->query('SELECT * FROM users WHERE email = :email', $params)->fetch();
 
+
         if ($user) {
             $errors['email'] = 'That email already exists';
             loadView('usersAuth/create', [
@@ -132,13 +139,16 @@ class UserAuthController
 
         // Create user account
         $params = [
+
             'given_name' => $givenName,
             'family_name' => $familyName,
+            'nick_name' => $nickName,
             'email' => $email,
-            'password' => password_hash($password, PASSWORD_DEFAULT)
+            'password' => password_hash($password, PASSWORD_DEFAULT),
+
         ];
 
-        $this->db->query('INSERT INTO users (given_name, family_name, email, user_password) VALUES (:given_name, :family_name, :email, :password)', $params);
+        $this->db->query('INSERT INTO users (given_name, family_name, nick_name, email, user_password) VALUES (:given_name, :family_name, :nick_name, :email, :password)', $params);
 
         // Get new user ID
         $userId = $this->db->conn->lastInsertId();

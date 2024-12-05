@@ -4,10 +4,10 @@
  *
  * Filename:        home.view.php
  * Location:        /App/views
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         tjg-PHP-MVC-Jokes
  * Date Created:    23/08/2024
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Tadiwanashe Gukwa <STUDENT_ID@tafe.wa.edu.au>
  *
  */
 
@@ -86,9 +86,9 @@ loadPartial('navigation');
                 </dd>
                 <dt class="col-span-1">Source Code:</dt>
                 <dd class="col-span-4">
-                    <a href="https://github.com/AdyGCode/XXX-PHP-MVC-Jokes-Demo"
+                    <a href="https://github.com/AdyGCode/tjg-PHP-MVC-Jokes-Demo"
                        class="underline underline-offset-2 text-zinc-900 rounded border-2 border-transparent hover:text-white hover:bg-red-500 hover:border-red-500">
-                        https://github.com/AdyGCode/XXX-PHP-MVC-Jokes-Demo
+                        https://github.com/AdyGCode/tjg-PHP-MVC-Jokes-Demo
                     </a>
                 </dd>
                 <dt class="col-span-1">HelpDesk</dt>

@@ -8,14 +8,14 @@
  *
  * Filename:        index.view.php
  * Location:        ${FILE_LOCATION}
- * Project:         XXX-PHP-MVC-Jokes
+ * Project:         tjg-PHP-MVC-Jokes
  * Date Created:    DD/MM/YYYY
  *
- * Author:          YOUR NAME <STUDENT_ID@tafe.wa.edu.au>
+ * Author:          Tadiwanashe Gukwa <STUDENT_ID@tafe.wa.edu.au>
  *
  */
 
-$pageTitle = "Add | Users | XXX-MVC-Jokes";
+$pageTitle = "Add | Users | tjg-MVC-Jokes";
 
 loadPartial("header", ["pageTitle"=>$pageTitle]);
 loadPartial('navigation');
