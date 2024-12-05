@@ -74,10 +74,21 @@ class UserAuthController
     {
         $givenName = $_POST['given_name'] ?? null;
         $familyName = $_POST['family_name'] ?? null;
+<<<<<<< HEAD
         $nickName = $_POST['nick_name'] ?? $givenName;
+=======
+        $nickName = $_POST['nickname'] ?? $givenName;
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
         $email = $_POST['email'] ?? null;
         $password = $_POST['password'] ?? null;
         $passwordConfirmation = $_POST['password_confirmation'] ?? null;
+<<<<<<< HEAD
+=======
+        $createdAt = $_POST['created_at'] ?? null;
+        $updatedAt = $_POST['updated_at'] ?? null;
+        $userId = $_POST['user_id'] ?? null;
+
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
         $errors = [];
 
         // Validation
@@ -113,7 +124,11 @@ class UserAuthController
                     'given_name' => $givenName,
                     'family_name' => $familyName,
                     'email' => $email,
+<<<<<<< HEAD
                     'nick_name' => $nickName,
+=======
+                    'nickname' => $nickName,
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
                     'password' => $password,
 
                 ]
@@ -139,16 +154,29 @@ class UserAuthController
 
         // Create user account
         $params = [
+<<<<<<< HEAD
 
+=======
+            'nickname' => $nickName,
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
             'given_name' => $givenName,
             'family_name' => $familyName,
             'nick_name' => $nickName,
             'email' => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT),
+<<<<<<< HEAD
 
         ];
 
         $this->db->query('INSERT INTO users (given_name, family_name, nick_name, email, user_password) VALUES (:given_name, :family_name, :nick_name, :email, :password)', $params);
+=======
+            'created_at' => $createdAt,
+            'updated_at' => $updatedAt,
+            'user_id' => $userId
+        ];
+
+        $this->db->query('INSERT INTO users (nick_name, given_name, family_name, email, user_password, created_at, updated_at, user_id) VALUES (:nick_name, :given_name, :family_name, :email, :password, :created_at, :updated_at, :user_id)', $params);
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
 
         // Get new user ID
         $userId = $this->db->conn->lastInsertId();

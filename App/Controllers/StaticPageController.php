@@ -38,6 +38,7 @@ class StaticPageController
     public function index()
     {
         // TODO: Crete the method code for the home page
+<<<<<<< HEAD
         $jokes = $this->db->query('SELECT * FROM jokes ORDER BY created_at DESC LIMIT 6')->fetchAll();
 
         $jokeCount = $this->db->query('SELECT count(id) as total FROM jokes ')->fetch();
@@ -55,6 +56,21 @@ class StaticPageController
             'categoryCount' => $categoryCount,
             'userCount' => $userCount,
         ]);
+=======
+        echo"<h1>CODE INSTALLED CORRECTLY</h1>";
+        echo"<p>Time to work on the rest of the application</p>";
+
+        $joke = $db->query("SELECT * FROM jokes ORDER BY RAND() LIMIT 1");
+
+
+
+
+
+
+
+
+
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
 
     }
 

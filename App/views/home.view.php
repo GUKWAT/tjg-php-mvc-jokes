@@ -26,6 +26,7 @@ loadPartial('navigation');
             <h1>Tadiwanashe's Joke DB</h1>
 
         </header>
+<<<<<<< HEAD
         <section class="my-8 flex flex-wrap gap-8 justify-center">
             <?php if (!empty($randomJoke)): ?>
                 <article class="max-w-96 min-w-64 bg-white shadow rounded p-2 flex flex-col">
@@ -89,6 +90,36 @@ loadPartial('navigation');
             </section>
 
         <section class="my-8 flex flex-wrap gap-8 justify-center">
+=======
+        <section class="flex flex-row flex-wrap justify-center my-8 gap-8">
+            <section class="w-1/4 bg-sky-800 text-white shadow rounded p-2 flex flex-row">
+                <h4 class="flex-0 w-1/2 -ml-2 mr-6 bg-sky-400 text-black text-lg p-4 -my-2 rounded-l">
+                    Jokes:
+                </h4>
+                <p class="grow text-4xl ml-6">
+                    <?= $jokeCount->total ?>
+                </p>
+            </section>
+            <section class="w-1/4 bg-amber-900 text-white shadow rounded p-2 flex flex-row">
+                <h4 class="flex-0 w-1/2 -ml-2 mr-6 bg-amber-400 text-black text-lg p-4 -my-2 rounded-l">
+                    Categories:
+                </h4>
+                <p class="grow text-4xl ml-6">
+                    <?= $categoryCount->total ?>
+                </p>
+            </section>
+            <section class="w-1/4 bg-red-700 text-white shadow rounded p-2 flex flex-row">
+                <h4 class="flex-0 w-1/2 -ml-2 mr-6 bg-red-400 text-black text-lg p-4 -my-2 rounded-l">
+                    Users:
+                </h4>
+                <p class="grow text-4xl ml-6">
+                    <?= $userCount->total ?>
+                </p>
+            </section>
+        </section>
+
+        <section class="my-8 flex flex-wrap gap-8 justify-center">
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
             <?php if (!empty($jokes)): ?>
                 <?php foreach ($jokes as $joke): ?>
                     <article class="max-w-96 min-w-64 bg-white shadow rounded p-2 flex flex-col">
@@ -106,7 +137,11 @@ loadPartial('navigation');
                         <footer class="-mx-2 bg-zinc-200 text-zinc-900 text-sm px-4 py-1 mt-4 -mb-2 rounded-b flex-0">
                             <p class="block w-full text-center px-5 py-2.5 shadow-sm rounded border
                                       text-base font-medium text-zinc-700 bg-zinc-100 hover:bg-zinc-200">
+<<<<<<< HEAD
                                 <?= $joke->Tadiwanashe ?>
+=======
+                                <?= $joke->author_name ?>
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
                             </p>
                         </footer>
                     </article>
@@ -120,12 +155,15 @@ loadPartial('navigation');
             <?php endif; ?>
         </section>
 
+<<<<<<< HEAD
         <?php endif; ?>
 
 
 
 
 
+=======
+>>>>>>> 497d26a37712ea2a2074bd1f5c05cd6ffa35d61b
         <section class="mx-auto w-1/2 m-8 bg-zinc-200 text-sm text-zinc-800 p-4 rounded-lg shadow">
             <p>MOVE THIS SECTION INTO THE ABOUT PAGE, AND REMOVE THIS LINE</p>
             <header class="-mx-4 bg-zinc-700 text-zinc-200 text-md text-semibold p-4 -mt-4 mb-4 rounded-t flex-0">
